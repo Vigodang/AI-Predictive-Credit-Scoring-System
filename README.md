@@ -64,26 +64,6 @@ MLBA_FinalProject/
 - **MySQL** server (tested with MySQL 8+)
 - **pip** (Python package manager)
 
-## Installation
-
-1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/yourusername/MLBA_FinalProject.git
-    cd MLBA_FinalProject
-    ```
-2. **Create and Activate a Virtual Environment (Recommended)**
-    ```bash
-    python -m venv venv
-    # On Windows:
-    venv\Scripts\activate
-    # On macOS/Linux:
-    source venv/bin/activate
-    ```
-3. **Install Dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ## Database Setup
 
 1. **Start MySQL Server** and create a database (e.g., `credit_risk_db`).
