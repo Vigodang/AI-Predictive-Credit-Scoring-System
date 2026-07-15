@@ -2,6 +2,7 @@
 Database Configuration
 Cấu hình kết nối MySQL cho ứng dụng Credit Risk Scoring
 """
+import os
 from typing import Dict
 
 
@@ -12,11 +13,11 @@ class DatabaseConfig:
     
     def __init__(
         self,
-        host: str = 'localhost',
-        port: int = 3306,
-        user: str = 'root',
-        password: str = '@Obama123',
-        database: str = 'credit_risk_db'
+        host: str = None,
+        port: int = None,
+        user: str = None,
+        password: str = None,
+        database: str = None
     ):
         """
         Khởi tạo cấu hình database
@@ -28,11 +29,11 @@ class DatabaseConfig:
             password: MySQL password
             database: Tên database
         """
-        self.host = host
-        self.port = port
-        self.user = user
-        self.password = password
-        self.database = database
+        self.host = host or os.getenv('CREDIT_DB_HOST', 'localhost')
+        self.port = port or int(os.getenv('CREDIT_DB_PORT', '3306'))
+        self.user = user or os.getenv('CREDIT_DB_USER', 'root')
+        self.password = password if password is not None else os.getenv('CREDIT_DB_PASSWORD', '')
+        self.database = database or os.getenv('CREDIT_DB_NAME', 'credit_risk_db')
     
     def to_dict(self) -> Dict[str, any]:
         """

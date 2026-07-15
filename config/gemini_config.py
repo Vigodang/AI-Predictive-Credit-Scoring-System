@@ -3,6 +3,9 @@ Gemini AI Configuration
 Cấu hình cho Google Gemini API
 """
 
+import os
+
+
 class GeminiConfig:
     """
     Cấu hình Gemini API
@@ -10,7 +13,7 @@ class GeminiConfig:
     
     # API Key - Lấy từ https://makersuite.google.com/app/apikey
     # QUAN TRỌNG: Thay YOUR_API_KEY_HERE bằng API key thật
-    API_KEY = "AIzaSyArf2S-o1Urzgxnx1cb9Qy9AtktWvjfT3g"
+    API_KEY = os.getenv("GEMINI_API_KEY", "YOUR_API_KEY_HERE")
     
     # Model name
     MODEL_NAME = "gemini-2.5-flash"  # Latest model version
